@@ -1,23 +1,15 @@
-let list = {
-  value: 1,
-  next: {
-    value: 2,
-    next: {
-      value: 3,
-      next: {
-        value: 4,
-        next: null,
-      },
-    },
-  },
-};
+function makeCounter() {
+  let count = 0;
 
-function printReverseList(list) {
-  if (list.next != null) {
-    printReverseList(list.next);
-  }
-
-  console.log(list.value);
+  return function () {
+    return count++;
+  };
 }
 
-printReverseList(list);
+let counter = makeCounter();
+let counter2 = makeCounter();
+
+console.log(counter()); // 0
+console.log(counter()); // 1
+console.log(counter2()); // 0
+console.log(counter2()); // 1
