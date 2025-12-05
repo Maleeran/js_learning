@@ -1,8 +1,13 @@
-const obj = {
-  name: "xxx",
-  test() {
-    return this.name;
-  },
-};
+function printNumbers(from, to) {
+  let current = from;
 
-console.log((obj && obj.test)());
+  let timerId = setInterval(() => {
+    console.log(current);
+    if (current == to) {
+      clearInterval(timerId);
+    }
+    current++;
+  }, 1000);
+}
+
+printNumbers(5, 10);
