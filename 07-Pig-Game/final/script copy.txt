@@ -32,6 +32,8 @@ const toggleActivePlayerVisual = () => {
   player1El.classList.toggle('player--active');
 };
 
+const checkWin = () => {};
+
 const init = () => {
   scores = [0, 0];
   currentScore = 0;
@@ -47,9 +49,6 @@ const init = () => {
 
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
-
-  document.querySelector(`#name--0`).textContent = 'Player 1';
-  document.querySelector(`#name--1`).textContent = 'Player 2';
 };
 
 init();
@@ -83,7 +82,7 @@ btnHold.addEventListener('click', () => {
   document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
 
-  if (scores[activePlayer] >= 20) {
+  if (scores[activePlayer] >= 100) {
     diceEl.classList.add('hidden');
 
     document
@@ -97,7 +96,6 @@ btnHold.addEventListener('click', () => {
     // alert('Game Over! Play Again? Click on "New Game"');
   } else {
     switchPlayer();
-    toggleActivePlayerVisual();
   }
   console.log(scores);
 });
