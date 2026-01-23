@@ -1,0 +1,20 @@
+{
+  "name": "final",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Maleeran",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "core-js": "^3.48.0",
+    "fraction.js": "^5.3.4",
+    "parcel": "^2.16.3",
+    "regenerator-runtime": "^0.14.1"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.3"
+  }
+}
